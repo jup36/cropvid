@@ -6,7 +6,7 @@ import numpy as np
 
 
 class VideoCropper:
-    def __init__(self, directory, suffix="cropped", search_string="cropped", x=80, y=110, width=108, height=100):
+    def __init__(self, directory, suffix="cropped_orofacial", search_string="cropped_orofacial", x=120, y=160, width=200, height=200):
         self.directory = directory
         self.suffix = suffix
         self.search_string = search_string
@@ -97,9 +97,14 @@ class VideoCropper:
                 key = cv2.waitKey(0)
 
                 if key == ord('y'):
+                    cv2.destroyWindow("Cropped Frame")
+                    cv2.waitKey(1)
                     return True
                 elif key == ord('n'):
+                    # cv2.destroyWindow("Cropped Frame")
+                    # cv2.waitKey(1)
                     return False
+
         finally:
             cv2.destroyAllWindows()
 
@@ -118,7 +123,8 @@ class VideoCropper:
                 self.x, self.y, self.width, self.height = new_x, new_y, new_width, new_height
 
             else:
-                cv2.destroyAllWindows()  # Ensure the window is closed after confirmation
+                cv2.destroyWindow("Cropped Frame")  # Ensure the window is closed after confirmation
+                cv2.waitKey(1)
                 break
 
 
