@@ -6,7 +6,7 @@ import numpy as np
 
 
 class VideoCropper:
-    def __init__(self, directory, suffix="cropped_orofacial", search_string="cropped_orofacial", x=120, y=160, width=200, height=200):
+    def __init__(self, directory, suffix="cropped_orofacial", search_string="cropped_orofacial", x=130, y=170, width=200, height=200):
         self.directory = directory
         self.suffix = suffix
         self.search_string = search_string
@@ -132,7 +132,7 @@ class VideoCropper:
 # Example usage
 # Ensure to replace this path with the actual path to your video directory
 from cropvid_v0p2 import VideoCropper
-video_directory = '/Users/jp3025/your_video_directory'
+video_directory = '/Users/jp3025/your_video_directory' (e.g., '/Volumes/buschman/Rodent Data/dualImaging_parkj/m1237_GCAMP/m1237_100124/task')
 
 if not os.path.exists(video_directory):
     print(f"The directory {video_directory} does not exist. Please provide a valid directory path.")
